@@ -43,21 +43,21 @@ function setup(){
 
 function draw(){
   background(200);
-  if(mouseIsPressed == true){
+  //if(mouseIsPressed == true){
     if(step == 0){
-      if(mouseX>x && abs(mouseX-x)>abs(mouseY-y)){
+      if((mouseIsPressed == true && mouseX>x && abs(mouseX-x)>abs(mouseY-y))||(rotationY>0 && abs(rotationY)>abs(rotationX))){ //right
         step=8;
         persp = 1;
       }
-      else if(mouseY<y && abs(mouseX-x)<abs(mouseY-y)){
+      else if((mouseIsPressed == true && mouseY<y && abs(mouseX-x)<abs(mouseY-y))||(rotationX<0 && abs(rotationY)<abs(rotationX))){ //up
         step=8;
         persp = 0;
       }
-      else if(mouseY>y && abs(mouseX-x)<abs(mouseY-y)){
+      else if((mouseIsPressed == true && mouseY>y && abs(mouseX-x)<abs(mouseY-y))||(rotationX>0 && abs(rotationY)<abs(rotationX))){ //down
         step=8;
         persp = 2;
       }
-      else if(mouseX<x && abs(mouseX-x)>abs(mouseY-y)){
+      else if((mouseIsPressed == true && mouseX<x && abs(mouseX-x)>abs(mouseY-y))||(rotationY<0 && abs(rotationY)>abs(rotationX))){ //left
         step=8;
         persp = 3;
       }
@@ -66,7 +66,7 @@ function draw(){
       if(step == 0){
         tic = 0;
       }
-    }
+  //  }
   }
 
   if(step > 0){
